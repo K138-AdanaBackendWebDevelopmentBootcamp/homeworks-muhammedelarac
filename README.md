@@ -1,5 +1,8 @@
 # 1- Week Home Work
 
+![alt text](https://github.com/K138-AdanaBackendWebDevelopmentBootcamp/homeworks-muhammedelarac/blob/master/1%20Week%20Homework.resim1.png?raw=true)
+
+
 
 
 
