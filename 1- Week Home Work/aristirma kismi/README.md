@@ -1,13 +1,3 @@
-# 1- Week Home Work
-
-![alt text](https://github.com/K138-AdanaBackendWebDevelopmentBootcamp/homeworks-muhammedelarac/blob/master/1-%20Week%20Home%20Work/resimler/1%20Week%20Homework.resim1.png?raw=true)
-
-
-
-
-
-
-
 # ARIŞTIEMA KISMI
  ## JVM,JRE ve JDK Nedir?
 Bu yazımızda Java ile geliştirme yapan herkesin bilmesi gereken en basit kavramlardan olan JVM,JRE ve JDK kavramları üzerinde duracağız.
