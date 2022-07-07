@@ -1,67 +1,73 @@
+import java.util.List;
 import java.util.Objects;
 
 public class PermanentInstructor extends Instructor {
-    public PermanentInstructor(String name, String phoneNumber, String address) {
-        super(name, phoneNumber, address);
-        
+
+    private double  fixedSalary ;
+
+    
+    public PermanentInstructor() {
+    }
+
+
+    
+    public PermanentInstructor(double fixedSalary) {
+        this.fixedSalary = fixedSalary;
     }
 
 
 
-
-    private double  fixedSalary ;
-
-  
     /**
-     * @return
+     * @param name
+     * @param phoneNumber
+     * @param address
+     * @param courseList
+     * @param fixedSalary
+     */
+    public PermanentInstructor(String name, String phoneNumber, String address, List<Course> courseList,
+            double fixedSalary) {
+        super(name, phoneNumber, address, courseList);
+        this.fixedSalary = fixedSalary;
+    }
+
+
+
+    /**
+     * @return the fixedSalary
      */
     public double getFixedSalary() {
         return fixedSalary;
     }
 
-    
+
+
     /**
-     * @param fixedSalary
+     * @param fixedSalary the fixedSalary to set
      */
     public void setFixedSalary(double fixedSalary) {
         this.fixedSalary = fixedSalary;
     }
 
 
-  
-    
+
     /* (non-Javadoc)
-     * @see Instructor#hashCode()
+     * @see java.lang.Object#toString()
      */
-    @Override
-    public int hashCode() {
-        return Objects.hash(fixedSalary);
-    }
-
-
- 
     
-    /* (non-Javadoc)
-     * @see Instructor#equals(java.lang.Object)
-     */
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (!(obj instanceof PermanentInstructor))
-            return false;
-        PermanentInstructor other = (PermanentInstructor) obj;
-        return Double.doubleToLongBits(fixedSalary) == Double.doubleToLongBits(other.fixedSalary);
-    }
-
-
-  
-    
-    /* (non-Javadoc)
-     * @see Instructor#toString()
-     */
     @Override
     public String toString() {
         return "PermanentInstructor [fixedSalary=" + fixedSalary + "]";
     }
+
+
+
+    
+
+
+  
+
+
+
+
+    
 }

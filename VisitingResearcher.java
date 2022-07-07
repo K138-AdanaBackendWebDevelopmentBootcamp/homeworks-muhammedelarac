@@ -1,74 +1,67 @@
+import java.util.List;
 import java.util.Objects;
 
-public class VisitingResearcher extends Instructor {
-
-    
-  
-    /**
-     * @param name
-     * @param phoneNumber
-     * @param address
-     */
-    public VisitingResearcher(String name, String phoneNumber, String address) {
-        super(name, phoneNumber, address);
-      
-    }
-
-
+public class VisitingResearcher extends Instructor  {
 
     private double  hourlySalary ;
 
     
+    public VisitingResearcher() {
+    }
+
+
     /**
-     * @return
+     * @param hourlySalary
+     */
+    public VisitingResearcher(double hourlySalary) {
+        this.hourlySalary = hourlySalary;
+    }
+
+
+    /**
+     * @param name
+     * @param phoneNumber
+     * @param address
+     * @param courseList
+     * @param hourlySalary
+     */
+    public VisitingResearcher(String name, String phoneNumber, String address, List<Course> courseList,
+            double hourlySalary) {
+        super(name, phoneNumber, address, courseList);
+        this.hourlySalary = hourlySalary;
+    }
+
+
+    /**
+     * @return the hourlySalary
      */
     public double getHourlySalary() {
         return hourlySalary;
     }
 
+
     /**
-     * @param hourlySalary
+     * @param hourlySalary the hourlySalary to set
      */
     public void setHourlySalary(double hourlySalary) {
         this.hourlySalary = hourlySalary;
     }
 
-    
-    
- 
-    
-    /* (non-Javadoc)
-     * @see Instructor#hashCode()
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(hourlySalary);
-    }
 
-    
-    
     /* (non-Javadoc)
-     * @see Instructor#equals(java.lang.Object)
+     * @see java.lang.Object#toString()
      */
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (!(obj instanceof VisitingResearcher))
-            return false;
-        VisitingResearcher other = (VisitingResearcher) obj;
-        return Double.doubleToLongBits(hourlySalary) == Double.doubleToLongBits(other.hourlySalary);
-    }
-
-   
     
-    /* (non-Javadoc)
-     * @see Instructor#toString()
-     */
     @Override
     public String toString() {
         return "VisitingResearcher [hourlySalary=" + hourlySalary + "]";
     }
+
+
+
+    
+
+    
     
 
 }

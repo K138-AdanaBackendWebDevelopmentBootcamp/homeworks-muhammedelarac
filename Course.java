@@ -12,7 +12,31 @@ public class Course {
     private List<Student> studentList = new ArrayList<>();
     private Instructor instructor;
 
-   
+
+    public Course() {
+    }
+
+
+    /**
+     * @param courseName
+     * @param courseCode
+     * @param creditScore
+     * @param studentList
+     * @param instructor
+     */
+    public Course(String courseName, String courseCode, int creditScore, List<Student> studentList,
+            Instructor instructor) {
+        this.courseName = courseName;
+        this.courseCode = courseCode;
+        this.creditScore = creditScore;
+        this.studentList = studentList;
+        this.instructor = instructor;
+    }
+
+
+
+
+
     /**
      * @return
      */
@@ -84,41 +108,9 @@ public class Course {
     }
 
    
-    /**
-     * @param courseName
-     * @param courseCode
-     * @param creditScore
-     */
-    public Course(String courseName, String courseCode, int creditScore) {
-        this.courseName = courseName;
-        this.courseCode = courseCode;
-        this.creditScore = creditScore;
-    }
-
-   
-    
-    /* (non-Javadoc)
-     * @see java.lang.Object#hashCode()
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(courseCode, courseName, creditScore);
-    }
-
   
-    /* (non-Javadoc)
-     * @see java.lang.Object#equals(java.lang.Object)
-     */
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (!(obj instanceof Course))
-            return false;
-        Course other = (Course) obj;
-        return Objects.equals(courseCode, other.courseCode) && Objects.equals(courseName, other.courseName)
-                && creditScore == other.creditScore;
-    }
+   
+  
 
     
     /* (non-Javadoc)
@@ -127,6 +119,31 @@ public class Course {
     @Override
     public String toString() {
         return "course [courseCode=" + courseCode + ", courseName=" + courseName + ", creditScore=" + creditScore + "]";
+    }
+
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(courseCode);
+    }
+
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!(obj instanceof Course))
+            return false;
+        Course other = (Course) obj;
+        return Objects.equals(courseCode, other.courseCode);
     }
 
     
