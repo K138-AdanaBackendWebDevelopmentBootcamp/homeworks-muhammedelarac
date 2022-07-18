@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\ridvan.akbas\\Desktop\\boot kamp\\Hibernate-All required jars/**/*.jar",
+        "c:\\Users\\ridvan.akbas\\Desktop\\mysql-connector-java-8.0.16.jar"
+    ]
+}
