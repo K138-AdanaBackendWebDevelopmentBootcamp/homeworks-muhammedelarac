@@ -1,4 +1,4 @@
-package Moodel;
+package model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

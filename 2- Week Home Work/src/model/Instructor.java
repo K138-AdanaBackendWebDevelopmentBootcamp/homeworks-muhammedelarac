@@ -1,4 +1,4 @@
-package Moodel;
+package model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -108,7 +108,10 @@ public class Instructor {
      * @param courseList the courseList to set
      */
     public void setCourseList(List<Course> courseList) {
+       if (courseList.size() >0){
         this.courseList = courseList;
+
+       }
     }
 
 

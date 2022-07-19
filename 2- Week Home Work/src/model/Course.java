@@ -1,14 +1,16 @@
-package Moodel;
+package model;
 
 import java.util.Objects;
 
 import javax.annotation.processing.Generated;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
@@ -26,11 +28,22 @@ public class Course {
     private String courseName ;
     private String courseCode;
     private int  creditScore ;
+    private Long courseId ;
+
+    /**
+     * @return the courseId
+     */
+    public Long getCourseId() {
+        return courseId;
+    }
+
 
     @ManyToMany(fetch = FetchType.LAZY, targetEntity = Student.class,cascade = CascadeType.ALL)
+
     private List<Student> studentList = new ArrayList<>();
 
     @ManyToOne ( fetch = FetchType.LAZY,  cascade = CascadeType.ALL, targetEntity = Instructor.class )
+    @ JoinColumn ( nullable = false)
     private Instructor instructor;
 
 
