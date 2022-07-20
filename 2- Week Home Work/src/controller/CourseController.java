@@ -1,8 +1,5 @@
 package controller;
 import java.util.List;
-
-import org.hibernate.loader.custom.CollectionReturn;
-
 import model.Course;
 import model.Instructor;
 import model.Student;
@@ -16,14 +13,14 @@ public List<Course> listAllCourse(){
     return courseService.listall();
     
 }
-public Course findById(int id){
+public Course findById(Long id){
     return courseService.finfById(id);
 }
 public void saveCouse(Course course) {
     courseService.saveToDatabase(course);
     
 }
-public void updateCourse(Course course,int id) {
+public void updateCourse(Course course,Long id) {
     courseService.updateOnDatabase(course,id);
 
     
@@ -32,10 +29,13 @@ public void deleteCourse(Course course) {
     courseService.deletFromDatabase(course);
     
 }
-public void deleteCourse(int id) {
-    courseService.deletFromDatabase(id);
+public void deleteCourseId(Course course,Long id) {
+    courseService.deletFromDatabase(course,id);
     
 }
+
+
+
 public void deleteByCourseId(Long id) {
     courseService.deleteByCourseId(id);
 }

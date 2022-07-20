@@ -1,14 +1,8 @@
 package service;
 
 import java.util.List;
-
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
-
-import org.hibernate.Hibernate;
-
 import utils.HibernateUtil;
-
 import model.Course;
 import model.Instructor;
 import model.Student;
@@ -20,32 +14,13 @@ public class CourseService implements CrudRepository<Course >, CourseRepository 
    
 
     EntityManager em = HibernateUtil.buildSessionFactory();
-
-    
-    
+   
 
     @Override
-    public void deletFromDatabase(int id) {
+    public void deletFromDatabase(Course course, Long id) {
         // TODO Auto-generated method stub
         try {
             em.getTransaction().begin();
-            em.remove(id);
-            em.getTransaction().commit();
-        } catch (Exception e) {
-            //TODO: handle exception
-            em.getTransaction().rollback();
-        }
-
-
-
-    }
-
-    @Override
-    public void deletFromDatabase(Course course, int id) {
-        // TODO Auto-generated method stub
-        try {
-            em.getTransaction().begin();
-            Course course2 = finfById(id);
             em.remove(course);
             em.getTransaction().commit();
         } catch (Exception e) {
@@ -55,10 +30,16 @@ public class CourseService implements CrudRepository<Course >, CourseRepository 
         
     
     }
+
+
+
+  
+
+
    
 
     @Override
-    public Course finfById(int id) {
+    public Course finfById(Long id) {
         // TODO Auto-generated method stub
 
         em.getTransaction().begin();
@@ -67,6 +48,8 @@ public class CourseService implements CrudRepository<Course >, CourseRepository 
 
         return course;
     }
+
+
 
     @Override
     public List<Course> listall() {
@@ -82,8 +65,9 @@ public class CourseService implements CrudRepository<Course >, CourseRepository 
 
    
 
+
     @Override
-    public void updateOnDatabase(Course course, int id) {
+    public void updateOnDatabase(Course course, Long id) {
         // TODO Auto-generated method stub
         try {
             em.getTransaction().begin();
@@ -161,12 +145,36 @@ public class CourseService implements CrudRepository<Course >, CourseRepository 
             em.getTransaction().rollback();
 
         }finally{
-            HibernateUtil.closeEntityManager(em);
+           // HibernateUtil.getEntityManager(em);
+
+
         }
 
 
         
     }
+
+
+
+
+
+  
+
+
+
+
+ @Override
+   public void deletFromDatabase(Course coruse) {
+        // TODO Auto-generated method stub
+        
+  }
+
+
+  
+
+
+
+
 
     
 }

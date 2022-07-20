@@ -1,10 +1,7 @@
 package model;
 
 import java.util.Objects;
-
-import javax.annotation.processing.Generated;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -23,7 +20,7 @@ import java.util.List;
 public class Course {
     @Id
     @ GeneratedValue ( generator = " course" , strategy = GenerationType.SEQUENCE)
-    @ SequenceGenerator ( name = " course" , sequenceName = " COURSE_SEQ_ID " )
+    @ SequenceGenerator ( name = " course" , sequenceName = " COURSE_SEQ_ID " , allocationSize = 0,initialValue = 1 )
     
     private String courseName ;
     private String courseCode;
